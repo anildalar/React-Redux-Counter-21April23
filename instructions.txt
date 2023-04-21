@@ -1,0 +1,29 @@
+React with Redux
+
+4 Basic Elements of Redux
+1. Actions
+2. ActionCreator
+3. ReducerFunction
+4. Store
+
+How to access the global store object in your component ?
+
+
+useContext
+
+Top Level Component
+<Provider value={object}>
+	<App>
+</Provider>
+
+useContext   === useSelector(cbfn)
+
+
+const [todos, dispatch] = useReducer(reducer, initialTodos);
+
+let dispatch = useDispatch()
+
+
+
+
+
