@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+//1. import area
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { AddByOne, Reset, SubtractByOne } from './_actionCreators';
 
+
+//2. Defination Area
 function App() {
+  //2.1 Hooks area
+  let storeObject = useSelector(storeObject=>storeObject )
+  let dispatch = useDispatch()
+  //2.2 function definationa rea
+
+
+  //2.3 Return statement
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      { console.log(storeObject)}
+      <h1 style={{textAlign:"center"}}>{storeObject.value}</h1>
+      <div style={{textAlign:"center"}}> 
+        <button onClick={()=>{ dispatch(AddByOne()) }}>+</button>
+        <button onClick={()=>{ dispatch(Reset()) }}>Reset</button>
+        <button onClick={()=>{ dispatch(SubtractByOne()) }}>-</button>
+      </div>
+    </>
   );
 }
 
+//3. Export Area
 export default App;
